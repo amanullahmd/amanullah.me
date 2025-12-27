@@ -1,8 +1,9 @@
 import nodemailer from 'nodemailer'
+import type { Transporter } from 'nodemailer'
 
-let transporter: any = null
+let transporter: Transporter | null = null
 
-function getTransporter() {
+function getTransporter(): Transporter {
   if (!transporter) {
     transporter = nodemailer.createTransport({
       host: process.env.EMAIL_HOST,
@@ -23,7 +24,7 @@ function getTransporter() {
         rateDelta: 1000,
         rateLimit: 5,
       },
-    })
+    } as any)
   }
   return transporter
 }
