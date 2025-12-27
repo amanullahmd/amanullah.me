@@ -5,26 +5,34 @@ let transporter: Transporter | null = null
 
 function getTransporter(): Transporter {
   if (!transporter) {
-    transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_HOST,
-      port: parseInt(process.env.EMAIL_PORT || '587'),
-      secure: process.env.EMAIL_PORT === '465',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASSWORD,
-      },
-      tls: {
-        rejectUnauthorized: false,
-      },
-      connectionTimeout: 10000,
-      socketTimeout: 10000,
-      pool: {
-        maxConnections: 1,
-        maxMessages: 100,
-        rateDelta: 1000,
-        rateLimit: 5,
-      },
-    } as any)
+    // Use SendGrid for production reliability
+    if (process.env.SENDGRID_API_KEY) {
+      transporter = nodemailer.createTransport({
+        host: 'smtp.sendgrid.net',
+        port: 587,
+        secure: false,
+        auth: {
+          user: 'apikey',
+          pass: process.env.SENDGRID_API_KEY,
+        },
+      } as any)
+    } else {
+      // Fallback to Hostinger SMTP
+      transporter = nodemailer.createTransport({
+        host: process.env.EMAIL_HOST,
+        port: parseInt(process.env.EMAIL_PORT || '587'),
+        secure: process.env.EMAIL_PORT === '465',
+        auth: {
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASSWORD,
+        },
+        tls: {
+          rejectUnauthorized: false,
+        },
+        connectionTimeout: 10000,
+        socketTimeout: 10000,
+      } as any)
+    }
   }
   return transporter
 }
