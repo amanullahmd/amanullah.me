@@ -3,10 +3,13 @@ import nodemailer from 'nodemailer'
 const transporter = nodemailer.createTransport({
   host: process.env.EMAIL_HOST,
   port: parseInt(process.env.EMAIL_PORT || '587'),
-  secure: false,
+  secure: process.env.EMAIL_PORT === '465', // Use TLS for 587, SSL for 465
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASSWORD,
+  },
+  tls: {
+    rejectUnauthorized: false, // Allow self-signed certificates
   },
 })
 
@@ -19,6 +22,12 @@ export interface ContactEmailData {
 
 export async function sendContactEmail(data: ContactEmailData): Promise<boolean> {
   try {
+    // Verify environment variables are set
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASSWORD) {
+      console.error('Email credentials not configured')
+      return false
+    }
+
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,
@@ -48,6 +57,9 @@ export async function sendContactEmail(data: ContactEmailData): Promise<boolean>
     return true
   } catch (error) {
     console.error('Error sending email:', error)
+    if (error instanceof Error) {
+      console.error('Email error details:', error.message)
+    }
     return false
   }
 }
