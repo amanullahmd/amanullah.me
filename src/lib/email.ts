@@ -1,41 +1,6 @@
-import nodemailer from 'nodemailer'
-import type { Transporter } from 'nodemailer'
+import { Resend } from 'resend'
 
-let transporter: Transporter | null = null
-
-function getTransporter(): Transporter {
-  if (!transporter) {
-    // Use SendGrid for production reliability
-    if (process.env.SENDGRID_API_KEY) {
-      transporter = nodemailer.createTransport({
-        host: 'smtp.sendgrid.net',
-        port: 587,
-        secure: false,
-        auth: {
-          user: 'apikey',
-          pass: process.env.SENDGRID_API_KEY,
-        },
-      } as any)
-    } else {
-      // Fallback to Hostinger SMTP
-      transporter = nodemailer.createTransport({
-        host: process.env.EMAIL_HOST,
-        port: parseInt(process.env.EMAIL_PORT || '587'),
-        secure: process.env.EMAIL_PORT === '465',
-        auth: {
-          user: process.env.EMAIL_USER,
-          pass: process.env.EMAIL_PASSWORD,
-        },
-        tls: {
-          rejectUnauthorized: false,
-        },
-        connectionTimeout: 10000,
-        socketTimeout: 10000,
-      } as any)
-    }
-  }
-  return transporter
-}
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 export interface ContactEmailData {
   name: string
@@ -46,19 +11,18 @@ export interface ContactEmailData {
 
 export async function sendContactEmail(data: ContactEmailData): Promise<boolean> {
   try {
-    // Verify environment variables are set
-    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASSWORD) {
-      console.error('Email credentials not configured')
+    // Verify API key is set
+    if (!process.env.RESEND_API_KEY) {
+      console.error('Resend API key not configured')
       return false
     }
 
-    const transporter = getTransporter()
+    console.log('Sending email via Resend to admin:', process.env.RESEND_FROM_EMAIL)
 
     // Send email to admin
-    console.log('Sending email to admin:', process.env.EMAIL_USER)
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER,
+    const adminEmailResult = await resend.emails.send({
+      from: process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev',
+      to: process.env.RESEND_TO_EMAIL || 'contact@amanullah.me',
       subject: `New Contact Form Submission: ${data.subject}`,
       html: `
         <h2>New Contact Form Submission</h2>
@@ -69,12 +33,18 @@ export async function sendContactEmail(data: ContactEmailData): Promise<boolean>
         <p>${data.message.replace(/\n/g, '<br>')}</p>
       `,
     })
-    console.log('Admin email sent successfully')
+
+    if (adminEmailResult.error) {
+      console.error('Failed to send admin email:', adminEmailResult.error)
+      return false
+    }
+
+    console.log('Admin email sent successfully:', adminEmailResult.data?.id)
 
     // Send confirmation email to user
     console.log('Sending confirmation email to:', data.email)
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
+    const userEmailResult = await resend.emails.send({
+      from: process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev',
       to: data.email,
       subject: 'Thank you for contacting me',
       html: `
@@ -84,8 +54,13 @@ export async function sendContactEmail(data: ContactEmailData): Promise<boolean>
         <p>Best regards,<br>MD Amanullah</p>
       `,
     })
-    console.log('Confirmation email sent successfully')
 
+    if (userEmailResult.error) {
+      console.error('Failed to send confirmation email:', userEmailResult.error)
+      return false
+    }
+
+    console.log('Confirmation email sent successfully:', userEmailResult.data?.id)
     return true
   } catch (error) {
     console.error('Error sending email:', error)
