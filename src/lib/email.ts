@@ -1,17 +1,32 @@
 import nodemailer from 'nodemailer'
 
-const transporter = nodemailer.createTransport({
-  host: process.env.EMAIL_HOST,
-  port: parseInt(process.env.EMAIL_PORT || '587'),
-  secure: process.env.EMAIL_PORT === '465', // Use TLS for 587, SSL for 465
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASSWORD,
-  },
-  tls: {
-    rejectUnauthorized: false, // Allow self-signed certificates
-  },
-})
+let transporter: any = null
+
+function getTransporter() {
+  if (!transporter) {
+    transporter = nodemailer.createTransport({
+      host: process.env.EMAIL_HOST,
+      port: parseInt(process.env.EMAIL_PORT || '587'),
+      secure: process.env.EMAIL_PORT === '465',
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASSWORD,
+      },
+      tls: {
+        rejectUnauthorized: false,
+      },
+      connectionTimeout: 10000,
+      socketTimeout: 10000,
+      pool: {
+        maxConnections: 1,
+        maxMessages: 100,
+        rateDelta: 1000,
+        rateLimit: 5,
+      },
+    })
+  }
+  return transporter
+}
 
 export interface ContactEmailData {
   name: string
@@ -28,6 +43,10 @@ export async function sendContactEmail(data: ContactEmailData): Promise<boolean>
       return false
     }
 
+    const transporter = getTransporter()
+
+    // Send email to admin
+    console.log('Sending email to admin:', process.env.EMAIL_USER)
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,
@@ -41,7 +60,10 @@ export async function sendContactEmail(data: ContactEmailData): Promise<boolean>
         <p>${data.message.replace(/\n/g, '<br>')}</p>
       `,
     })
+    console.log('Admin email sent successfully')
 
+    // Send confirmation email to user
+    console.log('Sending confirmation email to:', data.email)
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: data.email,
@@ -53,12 +75,14 @@ export async function sendContactEmail(data: ContactEmailData): Promise<boolean>
         <p>Best regards,<br>MD Amanullah</p>
       `,
     })
+    console.log('Confirmation email sent successfully')
 
     return true
   } catch (error) {
     console.error('Error sending email:', error)
     if (error instanceof Error) {
       console.error('Email error details:', error.message)
+      console.error('Email error stack:', error.stack)
     }
     return false
   }
