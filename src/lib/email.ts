@@ -1,7 +1,5 @@
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
 export interface ContactEmailData {
   name: string
   email: string
@@ -16,6 +14,8 @@ export async function sendContactEmail(data: ContactEmailData): Promise<boolean>
       console.error('Resend API key not configured')
       return false
     }
+
+    const resend = new Resend(process.env.RESEND_API_KEY)
 
     console.log('Sending email via Resend to admin:', process.env.RESEND_FROM_EMAIL)
 
