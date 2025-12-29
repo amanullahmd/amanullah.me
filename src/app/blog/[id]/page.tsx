@@ -2,10 +2,13 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { use } from 'react'
 import { getPostById, getBlogPosts } from '@/lib/blog'
+import PDFViewer from '@/components/PDFViewer'
 
-export default function BlogPostPage({ params }: { params: { id: string } }) {
-  const post = getPostById(params.id)
+export default function BlogPostPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params)
+  const post = getPostById(id)
 
   if (!post) {
     return (
@@ -63,6 +66,17 @@ export default function BlogPostPage({ params }: { params: { id: string } }) {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="prose dark:prose-invert max-w-none"
           >
+            {/* PDF Viewer */}
+            {post.pdfUrl && (
+              <div className="mb-12">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
+                  Document Preview
+                </h2>
+                <PDFViewer pdfUrl={post.pdfUrl} title={post.title} />
+              </div>
+            )}
+
+            {/* Text Content */}
             <div className="bg-slate-50 dark:bg-slate-800 p-8 rounded-lg mb-8">
               <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed whitespace-pre-wrap">
                 {post.content}

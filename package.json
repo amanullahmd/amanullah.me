@@ -1,13 +1,22 @@
 {
   "name": "amanullah-portfolio",
-  "version": "1.0.0",
-  "description": "Professional portfolio website for MD Amanullah",
+  "version": "1.1.0",
+  "description": "Professional portfolio website for MD Amanullah - Full-Stack Engineer & Product Builder",
   "private": true,
+  "homepage": "https://amanullah.me",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amanullah/portfolio.git"
+  },
+  "author": "MD Amanullah",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "vitest",
+    "test:run": "vitest --run"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
@@ -28,11 +37,22 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.1.5",
+    "@testing-library/react": "^14.1.2",
     "@types/node": "^20.10.6",
     "@types/nodemailer": "^6.4.14",
     "@types/react": "^18.2.46",
     "@types/react-dom": "^18.2.18",
+    "@vitejs/plugin-react": "^4.2.1",
+    "@vitest/ui": "^1.1.0",
     "eslint": "^9.0.0",
-    "eslint-config-next": "16.1.0"
+    "eslint-config-next": "16.1.0",
+    "fast-check": "^3.15.1",
+    "jsdom": "^23.0.1",
+    "vitest": "^1.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   }
 }

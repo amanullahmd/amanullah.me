@@ -62,16 +62,14 @@ export default function Hero() {
           variants={itemVariants}
           className="text-xl sm:text-2xl lg:text-3xl bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text text-transparent font-semibold mb-6"
         >
-          Software Engineer & Product Manager
+          Full-Stack Engineer & Product Builder
         </motion.p>
 
         <motion.p
           variants={itemVariants}
           className="text-base sm:text-lg lg:text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed"
         >
-          Full-Stack Developer | AI/ML Engineer | Entrepreneur
-          <br className="hidden sm:block" />
-          Building innovative solutions with modern technology
+          I design, build, and scale intelligent web products—from idea to production
         </motion.p>
 
         <motion.div
