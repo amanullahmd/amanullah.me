@@ -70,7 +70,8 @@ export const projects: Project[] = [
     category: 'ai-ml',
     technologies: ['Python', 'PyTorch', 'torchvision', 'scikit-learn', 'OpenCV', 'TensorBoard'],
     image: '/images/cnn-classifier.png',
-    githubUrl: 'https://github.com/amanullah/cnn-classifier',
+    liveUrl: 'https://cnn-object-production.up.railway.app/',
+    githubUrl: 'https://github.com/amanullahmd/cnn-object',
     results: [
       '93.4% overall accuracy',
       'Kochtöpfe: 98.4% accuracy',
