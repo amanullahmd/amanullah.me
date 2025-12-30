@@ -17,15 +17,17 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       transition={{ duration: 0.3 }}
       className="group bg-white dark:bg-slate-800 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
     >
-      <div className="relative h-48 bg-gradient-to-br from-primary to-secondary overflow-hidden">
-        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
-          <span className="text-white text-center px-4">
-            <p className="text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
-              View Project
-            </p>
-          </span>
+      <Link href={`/projects/${project.id}`} className="block">
+        <div className="relative h-48 bg-gradient-to-br from-primary to-secondary overflow-hidden cursor-pointer">
+          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+            <span className="text-white text-center px-4">
+              <p className="text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
+                View Project
+              </p>
+            </span>
+          </div>
         </div>
-      </div>
+      </Link>
 
       <div className="p-6">
         <div className="mb-3">
@@ -63,6 +65,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <Link href={`/projects/${project.id}`} className="flex-1">
             <Button className="w-full">Details</Button>
           </Link>
+          {project.liveUrl && (
+            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
+              <Button variant="outline" className="w-full">
+                Live Demo
+              </Button>
+            </a>
+          )}
           {project.githubUrl && (
             <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
               <Button variant="outline" className="w-full">
