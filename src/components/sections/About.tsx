@@ -18,9 +18,9 @@ export default function About() {
     },
     {
       year: '2021 - 2023',
-      title: 'IT-Support & Data Quality Engineer',
+      title: 'IT Support & Networking Engineer (Part-Time)',
       company: 'Aptiv Wuppertal',
-      description: 'Performed data quality assurance and error analysis on large-scale datasets. Optimized processes and workflows in agile environment. Managed ticketing systems and collaborated with international teams. Developed strong foundation in data management, problem-solving, and technical communication.',
+      description: 'Provided comprehensive IT support and network infrastructure management for automotive engineering teams. Managed ticketing systems and resolved technical issues with 95%+ first-contact resolution rate. Configured and maintained network systems, performed system administration tasks, and supported 50+ workstations. Collaborated with international teams across multiple time zones. Developed expertise in troubleshooting, network diagnostics, and IT infrastructure while balancing studies. Gained practical experience in IT operations, user support, and technical documentation.',
     },
   ]
 
