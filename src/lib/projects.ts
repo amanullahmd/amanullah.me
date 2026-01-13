@@ -105,25 +105,34 @@ export const projects: Project[] = [
   },
   {
     id: 'cnn-image-classifier',
-    title: 'CNN Image Classifier for Household Items',
-    description: 'Deep learning model achieving 93.4% accuracy in object classification',
+    title: 'CNN Image Classifier for Household Objects',
+    description: 'Deep learning model achieving 93.4% accuracy in classifying 4 household object types',
     longDescription:
-      'Implemented Convolutional Neural Network with Transfer Learning (ResNet18) for classifying household items. Achieved 93.4% accuracy with comprehensive data augmentation and evaluation.',
+      'Implemented Convolutional Neural Network with Transfer Learning (ResNet18) for classifying four household objects: cooking pots, cups, knives, and pens. Achieved 93.4% overall accuracy with comprehensive data augmentation, rigorous evaluation, and detailed per-class performance analysis. The model demonstrates particularly strong performance on cooking pots (98.4%) and cups (96.8%).',
     category: 'ai-ml',
     technologies: ['Python', 'PyTorch', 'torchvision', 'scikit-learn', 'OpenCV', 'TensorBoard'],
     image: '/images/cnn-classifier.png',
     liveUrl: 'https://cnn-object-production.up.railway.app/',
     githubUrl: 'https://github.com/amanullahmd/cnn-object',
     results: [
-      '93.4% overall accuracy',
-      'Kochtöpfe: 98.4% accuracy',
-      'Tassen: 96.8% accuracy',
+      'Overall Test Accuracy: 93.4%',
+      'Cooking Pot: 98.4% accuracy',
+      'Cup: 96.8% accuracy',
+      'Pen: 94.6% accuracy',
+      'Knife: 93.1% accuracy',
       'Comprehensive confusion matrix analysis',
+      'Robust performance across all object classes',
     ],
     problemStatement:
-      'Need for accurate automated classification of household items',
+      'Need for accurate automated classification of household objects for inventory management and object recognition applications',
     solution:
-      'Implemented CNN with Transfer Learning, data augmentation, and rigorous evaluation',
+      'Implemented CNN with Transfer Learning (ResNet18), data augmentation, class-specific optimization, and rigorous evaluation metrics',
+    lessonsLearned: [
+      'Transfer learning significantly improves accuracy on limited datasets',
+      'Data augmentation is crucial for robust model generalization',
+      'Per-class performance analysis reveals model strengths and weaknesses',
+      'ResNet18 provides excellent balance between accuracy and computational efficiency',
+    ],
     featured: true,
   },
   {
