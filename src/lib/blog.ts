@@ -13,6 +13,59 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 'clustering-algorithms',
+    title: 'Clustering Algorithms: k-Means and Hierarchical Clustering',
+    excerpt: 'A comprehensive analysis of clustering algorithms, exploring k-Means and Hierarchical Clustering techniques, their implementations, and practical applications in data science.',
+    content: `Clustering Algorithms: k-Means and Hierarchical Clustering
+
+This work provides an in-depth exploration of two fundamental clustering algorithms used in unsupervised machine learning: k-Means and Hierarchical Clustering.
+
+Key Topics Covered:
+• k-Means Algorithm: Principles, implementation, and optimization
+• Hierarchical Clustering: Agglomerative and divisive approaches
+• Distance metrics and similarity measures
+• Cluster evaluation and validation techniques
+• Practical applications and use cases
+• Comparative analysis of both algorithms
+
+Algorithm Analysis:
+k-Means Clustering:
+- Iterative partitioning approach
+- Centroid-based clustering
+- Time complexity and convergence properties
+- Advantages and limitations
+- Optimization techniques (k-means++)
+
+Hierarchical Clustering:
+- Dendrogram representation
+- Linkage criteria (single, complete, average, Ward)
+- Agglomerative vs. divisive approaches
+- Computational complexity
+- Advantages and limitations
+
+Practical Applications:
+• Customer segmentation and market analysis
+• Image segmentation and computer vision
+• Gene sequence analysis in bioinformatics
+• Document clustering and text mining
+• Anomaly detection and pattern recognition
+
+Implementation Considerations:
+• Choosing the optimal number of clusters
+• Handling high-dimensional data
+• Scalability and performance optimization
+• Preprocessing and feature normalization
+• Evaluation metrics (silhouette score, Davies-Bouldin index)
+
+This comprehensive analysis demonstrates deep understanding of unsupervised learning techniques and their practical applications in real-world data science problems.`,
+    category: 'ai-ml',
+    date: '2024-12-25',
+    readTime: 12,
+    featured: true,
+    tags: ['Machine Learning', 'Clustering', 'k-Means', 'Hierarchical Clustering', 'Data Science'],
+    pdfUrl: '/pdfs/k-Means-Hierarchical-Clustering.pdf',
+  },
+  {
     id: 'apache-superset-thesis',
     title: 'Apache Superset: Data Visualization & Business Intelligence',
     excerpt: 'A comprehensive thesis on Apache Superset, exploring its architecture, capabilities, and practical applications for real-time data visualization and business intelligence dashboards.',
