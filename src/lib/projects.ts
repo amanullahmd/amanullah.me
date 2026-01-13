@@ -26,7 +26,6 @@ export const projects: Project[] = [
     technologies: ['Next.js', 'React', 'TypeScript', 'Supabase', 'PostgreSQL', 'Payment APIs'],
     image: '/images/adaptify-loop.png',
     liveUrl: 'https://www.adaptifyloop.com',
-    githubUrl: 'https://github.com/amanullah/adaptify-loop',
     results: [
       'Launched MVP in 3 months with comprehensive validation',
       'Coordinated engineering team through Jira and monitoring',
