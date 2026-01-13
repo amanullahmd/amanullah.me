@@ -42,25 +42,25 @@ export const projects: Project[] = [
   },
   {
     id: 'paylio',
-    title: 'Paylio - Digital Payment Platform',
-    description: 'Next-generation digital payment platform for seamless money transfers',
+    title: 'Paylio - Invoice & Payment Platform for Freelancers',
+    description: 'FinTech invoice creation and payment platform designed specifically for freelancers',
     longDescription:
-      'Developed Paylio, a digital payment platform built as part of Adaptify Loop ecosystem. Enables users to send, receive, and manage money effortlessly with support for multiple payment modes and currencies. Combines speed, security, and simplicity for both personal and business transactions.',
+      'Developed Paylio, a specialized FinTech platform built as part of Adaptify Loop ecosystem. Paylio streamlines invoice creation, payment processing, and financial management for freelancers. The platform enables freelancers to create professional invoices, track payments, and manage their finances with ease.',
     category: 'entrepreneurial',
     technologies: ['Next.js', 'React', 'TypeScript', 'Spring Boot', 'PostgreSQL', 'AWS', 'Payment APIs'],
     image: '/images/paylio.png',
     liveUrl: 'https://www.paylio.io',
     results: [
-      'Support for 100+ payment modes',
-      'Multi-currency account management',
-      'Real-time transaction processing',
-      'Secure payment gateway integration',
-      'Seamless user experience for personal and business use',
+      'Simplified invoice creation for freelancers',
+      'Real-time payment tracking and notifications',
+      'Multi-currency support for international payments',
+      'Automated payment reminders and follow-ups',
+      'Comprehensive financial dashboard and reporting',
     ],
     problemStatement:
-      'Users need a reliable, fast, and secure platform for sending and receiving money across borders',
+      'Freelancers struggle with manual invoice creation, payment tracking, and financial management across multiple clients and currencies',
     solution:
-      'Built Paylio with modern payment infrastructure, supporting multiple payment methods and currencies with enterprise-grade security',
+      'Built Paylio with an intuitive interface for invoice generation, automated payment processing, and comprehensive financial analytics tailored for freelancer workflows',
     featured: true,
   },
   {
