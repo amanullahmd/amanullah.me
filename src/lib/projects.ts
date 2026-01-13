@@ -23,7 +23,7 @@ export const projects: Project[] = [
     longDescription:
       'Co-founded and led development of Adaptify Loop, a production-ready FinTech/SaaS platform with modern tech stack. Led full-stack development, team coordination, and technical decision-making. Conducted market research and idea validation, designed system architecture, managed team through Jira, and monitored development progress. Includes Paylio, a specialized invoice and payment platform for freelancers.',
     category: 'entrepreneurial',
-    technologies: ['Next.js', 'React', 'TypeScript', 'Supabase', 'PostgreSQL', 'AWS', 'Docker', 'Payment APIs'],
+    technologies: ['Next.js', 'React', 'TypeScript', 'Supabase', 'PostgreSQL', 'Payment APIs'],
     image: '/images/adaptify-loop.png',
     liveUrl: 'https://www.adaptifyloop.com',
     githubUrl: 'https://github.com/amanullah/adaptify-loop',
@@ -55,7 +55,7 @@ export const projects: Project[] = [
     longDescription:
       'Led development of Paylio, a specialized FinTech platform built as part of Adaptify Loop ecosystem. Conducted comprehensive idea validation testing, architected the system design, and designed the database schema. Managed team coordination through Jira ticket creation and assignment, monitored development progress, and collaborated with the team on implementation. Paylio streamlines invoice creation, payment processing, and financial management for freelancers with secure authentication and real-time processing.',
     category: 'entrepreneurial',
-    technologies: ['Next.js', 'React', 'TypeScript', 'Supabase', 'PostgreSQL', 'AWS', 'Payment APIs', 'Jira'],
+    technologies: ['Next.js', 'React', 'TypeScript', 'Supabase', 'PostgreSQL', 'Payment APIs'],
     image: '/images/paylio.png',
     liveUrl: 'https://www.paylio.io',
     results: [
