@@ -21,23 +21,31 @@ export const projects: Project[] = [
     title: 'Adaptify Loop',
     description: 'FinTech/SaaS platform for financial management and automation',
     longDescription:
-      'Co-founded and developed a production-ready FinTech/SaaS platform with modern tech stack. Led full-stack development, team coordination, and technical decision-making. Includes Paylio, a digital payment platform for seamless money transfers and payment processing.',
+      'Co-founded and led development of Adaptify Loop, a production-ready FinTech/SaaS platform with modern tech stack. Led full-stack development, team coordination, and technical decision-making. Conducted market research and idea validation, designed system architecture, managed team through Jira, and monitored development progress. Includes Paylio, a specialized invoice and payment platform for freelancers.',
     category: 'entrepreneurial',
-    technologies: ['Next.js', 'React', 'TypeScript', 'Spring Boot', 'PostgreSQL', 'AWS', 'Docker'],
+    technologies: ['Next.js', 'React', 'TypeScript', 'Supabase', 'PostgreSQL', 'AWS', 'Docker', 'Payment APIs'],
     image: '/images/adaptify-loop.png',
     liveUrl: 'https://www.adaptifyloop.com',
     githubUrl: 'https://github.com/amanullah/adaptify-loop',
     results: [
-      'Launched MVP in 3 months',
-      'Coordinated engineering team',
+      'Launched MVP in 3 months with comprehensive validation',
+      'Coordinated engineering team through Jira and monitoring',
       'Production-ready system with 99.9% uptime',
       'Scaled to handle 10k+ transactions/day',
       'Developed Paylio payment platform for digital transactions',
+      'Implemented secure authentication with Supabase',
+      'Designed scalable database architecture',
     ],
     problemStatement:
-      'Need for accessible, automated financial management tools for businesses',
+      'Need for accessible, automated financial management tools for businesses and freelancers with secure, scalable infrastructure',
     solution:
-      'Built scalable SaaS platform with modern tech stack, real-time processing, and intuitive UI',
+      'Built scalable SaaS platform with modern tech stack, real-time processing, intuitive UI, and specialized products like Paylio for specific use cases',
+    lessonsLearned: [
+      'Importance of thorough market validation before scaling',
+      'Team coordination and clear communication are critical for startup success',
+      'Supabase provides excellent scalability for FinTech applications',
+      'Modular product architecture allows for specialized solutions',
+    ],
     featured: true,
   },
   {
@@ -45,12 +53,16 @@ export const projects: Project[] = [
     title: 'Paylio - Invoice & Payment Platform for Freelancers',
     description: 'FinTech invoice creation and payment platform designed specifically for freelancers',
     longDescription:
-      'Developed Paylio, a specialized FinTech platform built as part of Adaptify Loop ecosystem. Paylio streamlines invoice creation, payment processing, and financial management for freelancers. The platform enables freelancers to create professional invoices, track payments, and manage their finances with ease.',
+      'Led development of Paylio, a specialized FinTech platform built as part of Adaptify Loop ecosystem. Conducted comprehensive idea validation testing, architected the system design, and designed the database schema. Managed team coordination through Jira ticket creation and assignment, monitored development progress, and collaborated with the team on implementation. Paylio streamlines invoice creation, payment processing, and financial management for freelancers with secure authentication and real-time processing.',
     category: 'entrepreneurial',
-    technologies: ['Next.js', 'React', 'TypeScript', 'Spring Boot', 'PostgreSQL', 'AWS', 'Payment APIs'],
+    technologies: ['Next.js', 'React', 'TypeScript', 'Supabase', 'PostgreSQL', 'AWS', 'Payment APIs', 'Jira'],
     image: '/images/paylio.png',
     liveUrl: 'https://www.paylio.io',
     results: [
+      'Conducted idea validation testing and market research',
+      'Designed scalable system architecture and database schema',
+      'Implemented secure authentication with Supabase',
+      'Coordinated team through Jira ticket management and monitoring',
       'Simplified invoice creation for freelancers',
       'Real-time payment tracking and notifications',
       'Multi-currency support for international payments',
@@ -58,9 +70,15 @@ export const projects: Project[] = [
       'Comprehensive financial dashboard and reporting',
     ],
     problemStatement:
-      'Freelancers struggle with manual invoice creation, payment tracking, and financial management across multiple clients and currencies',
+      'Freelancers struggle with manual invoice creation, payment tracking, and financial management across multiple clients and currencies. Need for secure, scalable platform with proper team coordination and monitoring.',
     solution:
-      'Built Paylio with an intuitive interface for invoice generation, automated payment processing, and comprehensive financial analytics tailored for freelancer workflows',
+      'Led end-to-end development: validated market opportunity, designed scalable architecture with Supabase authentication, coordinated team through Jira, and built intuitive platform for invoice generation, automated payment processing, and comprehensive financial analytics tailored for freelancer workflows',
+    lessonsLearned: [
+      'Importance of thorough idea validation before development',
+      'Effective team coordination through proper project management tools',
+      'Supabase provides excellent authentication and real-time capabilities for FinTech applications',
+      'Database design is critical for scalability in payment platforms',
+    ],
     featured: true,
   },
   {
