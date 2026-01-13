@@ -136,28 +136,6 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 'music-generation-rnn',
-    title: 'Music Generation with RNNs',
-    description: 'LSTM-based model for generating coherent music sequences',
-    longDescription:
-      'Developed Recurrent Neural Network (LSTM) for sequence generation trained on IrishMAN dataset. Implemented tokenization, sequence modeling, and TensorBoard visualization.',
-    category: 'ai-ml',
-    technologies: ['Python', 'PyTorch', 'LSTM', 'Hugging Face', 'TensorBoard'],
-    image: '/images/music-generation.png',
-    githubUrl: 'https://github.com/amanullah/music-generation-rnn',
-    results: [
-      'Coherent sequence generation',
-      'Top-1 and Top-5 accuracy metrics',
-      'TensorBoard visualization',
-      'Trained on 10k+ music sequences',
-    ],
-    problemStatement:
-      'Generating realistic music sequences requires understanding long-term dependencies',
-    solution:
-      'Implemented LSTM architecture with proper tokenization and sequence modeling',
-    featured: false,
-  },
-  {
     id: 'data-visualization',
     title: 'Data Visualization Dashboard',
     description: 'Interactive dashboards for data quality metrics and business intelligence',
