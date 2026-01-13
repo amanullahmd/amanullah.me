@@ -21,7 +21,7 @@ export const projects: Project[] = [
     title: 'Adaptify Loop',
     description: 'FinTech/SaaS platform for financial management and automation',
     longDescription:
-      'Co-founded and developed a production-ready FinTech/SaaS platform with modern tech stack. Led full-stack development, team coordination, and technical decision-making.',
+      'Co-founded and developed a production-ready FinTech/SaaS platform with modern tech stack. Led full-stack development, team coordination, and technical decision-making. Includes Paylio, a digital payment platform for seamless money transfers and payment processing.',
     category: 'entrepreneurial',
     technologies: ['Next.js', 'React', 'TypeScript', 'Spring Boot', 'PostgreSQL', 'AWS', 'Docker'],
     image: '/images/adaptify-loop.png',
@@ -32,11 +32,35 @@ export const projects: Project[] = [
       'Coordinated engineering team',
       'Production-ready system with 99.9% uptime',
       'Scaled to handle 10k+ transactions/day',
+      'Developed Paylio payment platform for digital transactions',
     ],
     problemStatement:
       'Need for accessible, automated financial management tools for businesses',
     solution:
       'Built scalable SaaS platform with modern tech stack, real-time processing, and intuitive UI',
+    featured: true,
+  },
+  {
+    id: 'paylio',
+    title: 'Paylio - Digital Payment Platform',
+    description: 'Next-generation digital payment platform for seamless money transfers',
+    longDescription:
+      'Developed Paylio, a digital payment platform built as part of Adaptify Loop ecosystem. Enables users to send, receive, and manage money effortlessly with support for multiple payment modes and currencies. Combines speed, security, and simplicity for both personal and business transactions.',
+    category: 'entrepreneurial',
+    technologies: ['Next.js', 'React', 'TypeScript', 'Spring Boot', 'PostgreSQL', 'AWS', 'Payment APIs'],
+    image: '/images/paylio.png',
+    liveUrl: 'https://www.paylio.io',
+    results: [
+      'Support for 100+ payment modes',
+      'Multi-currency account management',
+      'Real-time transaction processing',
+      'Secure payment gateway integration',
+      'Seamless user experience for personal and business use',
+    ],
+    problemStatement:
+      'Users need a reliable, fast, and secure platform for sending and receiving money across borders',
+    solution:
+      'Built Paylio with modern payment infrastructure, supporting multiple payment methods and currencies with enterprise-grade security',
     featured: true,
   },
   {
