@@ -17,37 +17,6 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 'adaptify-loop',
-    title: 'Adaptify Loop',
-    description: 'FinTech/SaaS platform for financial management and automation',
-    longDescription:
-      'Co-founded and led development of Adaptify Loop, a production-ready FinTech/SaaS platform with modern tech stack. Led full-stack development, team coordination, and technical decision-making. Conducted market research and idea validation, designed system architecture, managed team through Jira, and monitored development progress. Includes Paylio, a specialized invoice and payment platform for freelancers.',
-    category: 'entrepreneurial',
-    technologies: ['Next.js', 'React', 'TypeScript', 'Supabase', 'PostgreSQL', 'Payment APIs'],
-    image: '/images/adaptify-loop.png',
-    liveUrl: 'https://www.adaptifyloop.com',
-    results: [
-      'Launched MVP in 3 months with comprehensive validation',
-      'Coordinated engineering team through Jira and monitoring',
-      'Production-ready system with 99.9% uptime',
-      'Scaled to handle 10k+ transactions/day',
-      'Developed Paylio payment platform for digital transactions',
-      'Implemented secure authentication with Supabase',
-      'Designed scalable database architecture',
-    ],
-    problemStatement:
-      'Need for accessible, automated financial management tools for businesses and freelancers with secure, scalable infrastructure',
-    solution:
-      'Built scalable SaaS platform with modern tech stack, real-time processing, intuitive UI, and specialized products like Paylio for specific use cases',
-    lessonsLearned: [
-      'Importance of thorough market validation before scaling',
-      'Team coordination and clear communication are critical for startup success',
-      'Supabase provides excellent scalability for FinTech applications',
-      'Modular product architecture allows for specialized solutions',
-    ],
-    featured: true,
-  },
-  {
     id: 'paylio',
     title: 'Paylio - Invoice & Payment Platform for Freelancers',
     description: 'FinTech invoice creation and payment platform designed specifically for freelancers',
@@ -131,6 +100,43 @@ export const projects: Project[] = [
       'Data augmentation is crucial for robust model generalization',
       'Per-class performance analysis reveals model strengths and weaknesses',
       'ResNet18 provides excellent balance between accuracy and computational efficiency',
+    ],
+    featured: true,
+  },
+  {
+    id: 'music-rnn',
+    title: 'Music Generation with RNNs',
+    description: 'Deep learning system generating Irish folk music using 2-Layer LSTM trained on 214K tunes',
+    longDescription:
+      'Implemented a music generation system using Recurrent Neural Networks (RNNs) trained on the IrishMAN dataset containing 214,122 Irish folk tunes in ABC notation format. The model learns to generate new music by predicting the next character in a sequence, similar to language models but applied to music. Achieved 74.91% top-1 accuracy and 95.40% top-5 accuracy. Built a professional Flask web application with gradient-based UI, real-time generation, ABC notation display, and generation history tracking. The system successfully generates syntactically valid ABC notation tunes that follow musical conventions learned from the training data.',
+    category: 'ai-ml',
+    technologies: ['Python', 'PyTorch', 'Flask', 'LSTM', 'NumPy', 'JavaScript', 'HTML/CSS'],
+    image: '/images/music-rnn.png',
+    liveUrl: 'https://music-rnn-production.up.railway.app/',
+    githubUrl: 'https://github.com/amanullahmd/music-rnn',
+    results: [
+      'Top-1 Accuracy: 74.91%',
+      'Top-5 Accuracy: 95.40%',
+      'Model Parameters: 959,715',
+      'Training Loss: 0.7918',
+      'Validation Loss: 0.7729',
+      'Trained on 214,122 Irish folk tunes',
+      'Generates syntactically valid ABC notation',
+      'Professional web interface with real-time generation',
+      'Temperature control for creativity adjustment',
+      'Generation history tracking and ABC download',
+    ],
+    problemStatement:
+      'Music generation requires understanding complex sequential patterns and musical conventions. Traditional approaches struggle with variable-length sequences and maintaining musical coherence.',
+    solution:
+      'Implemented 2-Layer LSTM with 256 hidden units and 128-dimensional embeddings, trained on 214K Irish folk tunes. Applied gradient clipping for stability, dropout for regularization, and learning rate scheduling. Built Flask web application with real-time generation, temperature control, and ABC notation validation.',
+    lessonsLearned: [
+      'RNNs effectively learn sequential patterns in structured formats like ABC notation',
+      'LSTM cells handle long sequences better than vanilla RNNs with proper gradient management',
+      'Character-level modeling works well for music generation in structured formats',
+      'GPU acceleration is essential for training on large-scale datasets',
+      'Proper regularization (dropout, gradient clipping) prevents overfitting while maintaining generalization',
+      'Temperature control provides intuitive control over generation creativity vs. determinism',
     ],
     featured: true,
   },
