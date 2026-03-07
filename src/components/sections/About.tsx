@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { projects } from '@/lib/projects'
 
 export default function About() {
   const timeline = [
@@ -12,9 +13,9 @@ export default function About() {
     },
     {
       year: '2023 - Present',
-      title: 'Bachelor of Computer Science (Final Year)',
+      title: 'Bachelor of Computer Science',
       company: 'University of Applied Sciences Mittelhessen (THM), Gießen',
-      description: 'Advanced studies in computer science with specialization in AI/ML and full-stack development. Coursework includes data structures, algorithms, databases, statistics, and software engineering. Practical projects in Deep Learning (CNN, RNN), data analysis, and production-ready system development. Expected graduation: 2025.',
+      description: 'Advanced studies in computer science with specialization in AI/ML and full-stack development. Coursework includes data structures, algorithms, databases, statistics, and software engineering. Practical projects in Deep Learning (CNN, RNN), data analysis, and production-ready system development. Expected graduation: Winter Semester 2027.',
     },
     {
       year: '2021 - 2023',
@@ -56,21 +57,21 @@ export default function About() {
             className="space-y-6"
           >
             <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-              I'm a Computer Science student at THM Gießen with a passion for building innovative solutions at the intersection of technology and business. With expertise in full-stack development, AI/ML, and product management, I combine technical excellence with strategic thinking to create impactful products.
+              I'm a Computer Science student at THM Gießen passionate about building robust, scalable systems. My core stack is Java/Spring Boot on the backend and React/Next.js on the frontend, complemented by deep expertise in AI/ML with PyTorch and TensorFlow. I thrive at the intersection of engineering, data science, and product thinking.
             </p>
 
             <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-              My journey began in IT support at Aptiv, where I developed strong problem-solving skills and learned the importance of data quality. This foundation led me to pursue advanced studies in computer science, specializing in Deep Learning and AI. I've built AI models achieving 93.4% accuracy and developed production-ready systems.
+              My journey started in IT support at Aptiv, where I built strong problem-solving and infrastructure skills. This foundation drove me into full-stack development and Deep Learning — building CNN models achieving 93.4% accuracy, music generation systems with LSTMs, and production-grade Spring Boot microservices with PostgreSQL.
             </p>
 
             <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-              Currently, I'm co-founding Adaptify Loop, a FinTech/SaaS platform where I lead technical strategy and development. I'm passionate about building scalable systems, leading engineering teams, and creating solutions that solve real-world problems. Fluent in German (C1) and English (C1), with strong communication skills across international teams.
+              As Co-Founder of Adaptify Loop, I lead product strategy and technical architecture for a FinTech/SaaS platform. I've shipped 15+ features, coordinated engineering teams, and launched an MVP in 3 months. I bring an entrepreneurial mindset to every project — always thinking about scalability, user impact, and business value. Fluent in German (C1) and English (C1).
             </p>
 
             <div className="pt-4">
               <a
-                href="/resume.pdf"
-                download
+                href="/CV_Amanullah.pdf"
+                download="CV_Amanullah.pdf"
                 className="inline-block btn-primary"
               >
                 Download CV
@@ -133,20 +134,53 @@ export default function About() {
 
           <div className="card text-center">
             <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text text-transparent mb-2">
-              5+
+              {projects.length}+
             </div>
             <p className="text-slate-600 dark:text-slate-300">
               Production Projects
             </p>
           </div>
 
-          <div className="card text-center">
-            <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text text-transparent mb-2">
-              2
+          <div className="card">
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 text-center">Languages</h3>
+            <div className="space-y-3">
+              <div>
+                <div className="flex justify-between items-center mb-1">
+                  <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">Bangla</span>
+                  <span className="text-xs text-slate-500 dark:text-slate-400">Native</span>
+                </div>
+                <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                  <div className="bg-gradient-to-r from-blue-600 to-orange-500 h-2 rounded-full" style={{ width: '100%' }}></div>
+                </div>
+              </div>
+              <div>
+                <div className="flex justify-between items-center mb-1">
+                  <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">German</span>
+                  <span className="text-xs text-slate-500 dark:text-slate-400">C1</span>
+                </div>
+                <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                  <div className="bg-gradient-to-r from-blue-600 to-orange-500 h-2 rounded-full" style={{ width: '95%' }}></div>
+                </div>
+              </div>
+              <div>
+                <div className="flex justify-between items-center mb-1">
+                  <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">English</span>
+                  <span className="text-xs text-slate-500 dark:text-slate-400">C1</span>
+                </div>
+                <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                  <div className="bg-gradient-to-r from-blue-600 to-orange-500 h-2 rounded-full" style={{ width: '95%' }}></div>
+                </div>
+              </div>
+              <div>
+                <div className="flex justify-between items-center mb-1">
+                  <span className="text-sm font-semibold text-slate-700 dark:text-slate-300">Hindi</span>
+                  <span className="text-xs text-slate-500 dark:text-slate-400">Proficient</span>
+                </div>
+                <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                  <div className="bg-gradient-to-r from-blue-600 to-orange-500 h-2 rounded-full" style={{ width: '80%' }}></div>
+                </div>
+              </div>
             </div>
-            <p className="text-slate-600 dark:text-slate-300">
-              Languages (C1)
-            </p>
           </div>
         </motion.div>
       </div>

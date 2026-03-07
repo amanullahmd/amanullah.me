@@ -62,7 +62,7 @@ export default function ProductLeadership() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="section-title">Product & Leadership</h2>
+          <h2 className="section-title">Product & Entrepreneurship</h2>
           <div className="section-divider"></div>
         </motion.div>
 
@@ -75,13 +75,12 @@ export default function ProductLeadership() {
           className="mb-16 text-center"
         >
           <p className="text-xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl mx-auto">
-            I work at the intersection of engineering and product—defining requirements, prioritizing
-            features, and ensuring technical decisions align with user and business goals. This rare
-            combination of{' '}
+            I work at the intersection of engineering and product — defining requirements, prioritizing
+            features, and ensuring technical decisions align with user and business goals. This combination of{' '}
             <span className="font-semibold text-blue-600 dark:text-blue-400">
-              engineering + product + startup experience
+              Java full-stack engineering + AI/ML + entrepreneurship
             </span>{' '}
-            enables me to build products that are both technically sound and market-driven.
+            enables me to build products that are technically robust, data-driven, and market-ready.
           </p>
         </motion.div>
 
@@ -197,25 +196,25 @@ export default function ProductLeadership() {
               Engineering
             </div>
             <p className="text-slate-600 dark:text-slate-300">
-              Full-stack development expertise with production-ready systems
+              Java/Spring Boot backend, React/Next.js frontend, PostgreSQL, Docker, REST APIs
             </p>
           </div>
 
           <div className="card text-center">
             <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text text-transparent mb-2">
-              Product
+              AI / ML
             </div>
             <p className="text-slate-600 dark:text-slate-300">
-              Strategic thinking with user-centric design and market validation
+              Deep Learning with PyTorch, CNNs, RNNs/LSTMs, scikit-learn, and data-driven solutions
             </p>
           </div>
 
           <div className="card text-center">
             <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text text-transparent mb-2">
-              Startup
+              Entrepreneur
             </div>
             <p className="text-slate-600 dark:text-slate-300">
-              Real-world experience building and scaling from zero to production
+              Co-Founded a FinTech startup — product strategy, team leadership, and zero-to-production delivery
             </p>
           </div>
         </motion.div>

@@ -6,7 +6,7 @@ import { skills, getSkillsByCategory, getProficiencyPercentage } from '@/lib/ski
 export default function Skills() {
   const categories = [
     { id: 'technical', label: 'Technical Skills' },
-    { id: 'product', label: 'Product & Strategy' },
+    { id: 'product', label: 'Product & Entrepreneurship' },
     { id: 'leadership', label: 'Leadership' },
   ]
 

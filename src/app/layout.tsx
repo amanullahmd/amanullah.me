@@ -4,11 +4,12 @@ import Footer from '@/components/Footer'
 import '@/styles/globals.css'
 
 export const metadata: Metadata = {
-  title: 'MD Amanullah - Software Engineer & Product Manager',
-  description: 'Professional portfolio showcasing full-stack development, AI/ML expertise, and product management experience',
+  title: 'MD Amanullah - Java Full-Stack Developer | Spring Boot · React · AI/ML',
+  description: 'Java Full-Stack Developer specializing in Spring Boot, Next.js, React, and AI/ML. Building scalable backend systems, intelligent web applications, and production-ready solutions. Computer Science student and entrepreneur.',
+  keywords: ['Java Developer', 'Spring Boot', 'Full-Stack Developer', 'React', 'Next.js', 'AI', 'Machine Learning', 'Deep Learning', 'PyTorch', 'PostgreSQL', 'REST API', 'Microservices'],
   openGraph: {
-    title: 'MD Amanullah - Software Engineer & Product Manager',
-    description: 'Professional portfolio of MD Amanullah',
+    title: 'MD Amanullah - Java Full-Stack Developer | Spring Boot · React · AI/ML',
+    description: 'Java Full-Stack Developer building scalable systems with Spring Boot, React, and AI/ML',
     type: 'website',
   },
 }

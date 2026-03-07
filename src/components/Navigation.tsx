@@ -35,7 +35,7 @@ export default function Navigation() {
     { href: '/projects', label: 'Projects' },
     { href: '/blog', label: 'Blog' },
     { href: '/#skills', label: 'Skills' },
-    { href: '/#product-leadership', label: 'Product' },
+    { href: '/#product-leadership', label: 'Entrepreneurship' },
     { href: '/#contact', label: 'Contact' },
   ]
 

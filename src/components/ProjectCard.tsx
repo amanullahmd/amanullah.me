@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 import { Project } from '@/lib/projects'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
@@ -11,6 +12,10 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  const [showGithubMenu, setShowGithubMenu] = useState(false)
+
+  const hasMultipleGithubUrls = project.githubUrls && project.githubUrls.length > 1
+
   return (
     <motion.div
       whileHover={{ y: -8 }}
@@ -72,13 +77,44 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               </Button>
             </a>
           )}
-          {project.githubUrl && (
+          {hasMultipleGithubUrls ? (
+            <div className="flex-1 relative">
+              <button
+                onClick={() => setShowGithubMenu(!showGithubMenu)}
+                className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+              >
+                GitHub ▼
+              </button>
+              {showGithubMenu && (
+                <div className="absolute top-full left-0 right-0 mt-1 bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-md shadow-lg z-10">
+                  {project.githubUrls?.map((github) => (
+                    <a
+                      key={github.label}
+                      href={github.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block px-4 py-2 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-600 first:rounded-t-md last:rounded-b-md transition-colors"
+                      onClick={() => setShowGithubMenu(false)}
+                    >
+                      {github.label}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          ) : project.githubUrl ? (
             <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex-1">
               <Button variant="outline" className="w-full">
                 GitHub
               </Button>
             </a>
-          )}
+          ) : project.githubUrls && project.githubUrls.length === 1 ? (
+            <a href={project.githubUrls[0].url} target="_blank" rel="noopener noreferrer" className="flex-1">
+              <Button variant="outline" className="w-full">
+                GitHub
+              </Button>
+            </a>
+          ) : null}
         </div>
       </div>
     </motion.div>

@@ -62,14 +62,14 @@ export default function Hero() {
           variants={itemVariants}
           className="text-xl sm:text-2xl lg:text-3xl bg-gradient-to-r from-blue-600 to-orange-500 bg-clip-text text-transparent font-semibold mb-6"
         >
-          Full-Stack Engineer & Product Builder
+          Java Full-Stack Developer · AI/ML Engineer · Entrepreneur
         </motion.p>
 
         <motion.p
           variants={itemVariants}
           className="text-base sm:text-lg lg:text-xl text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed"
         >
-          I design, build, and scale intelligent web products—from idea to production
+          Building scalable backend systems with Spring Boot, intelligent frontends with React/Next.js, and AI-powered solutions — from concept to production
         </motion.p>
 
         <motion.div
@@ -82,12 +82,12 @@ export default function Hero() {
           >
             View Projects
           </Link>
-          <a
-            href="#contact"
+          <Link
+            href="/#contact"
             className="w-full sm:w-auto px-8 py-3 border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 rounded-lg font-semibold hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-slate-900 transition-all duration-200 transform hover:scale-105 active:scale-95"
           >
             Get in Touch
-          </a>
+          </Link>
         </motion.div>
 
         <motion.div

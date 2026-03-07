@@ -8,6 +8,7 @@ export interface Project {
   image: string
   liveUrl?: string
   githubUrl?: string
+  githubUrls?: { label: string; url: string }[]
   results: string[]
   problemStatement: string
   solution: string
@@ -58,7 +59,10 @@ export const projects: Project[] = [
     category: 'fullstack',
     technologies: ['Next.js', 'React', 'TypeScript', 'Spring Boot', 'PostgreSQL', 'Docker', 'REST APIs'],
     image: '/images/inventory-system.png',
-    githubUrl: 'https://github.com/amanullah/inventory-management',
+    githubUrls: [
+      { label: 'Backend', url: 'https://github.com/amanullahmd/inventory-backend' },
+      { label: 'Frontend', url: 'https://github.com/amanullahmd/inventory-frontend' },
+    ],
     results: [
       'Real-time inventory tracking',
       'Reduced manual data entry by 80%',
@@ -112,7 +116,6 @@ export const projects: Project[] = [
     category: 'ai-ml',
     technologies: ['Python', 'PyTorch', 'Flask', 'LSTM', 'NumPy', 'JavaScript', 'HTML/CSS'],
     image: '/images/music-rnn.png',
-    liveUrl: 'https://music-rnn-production.up.railway.app/',
     githubUrl: 'https://github.com/amanullahmd/music-rnn',
     results: [
       'Top-1 Accuracy: 74.91%',
@@ -137,6 +140,42 @@ export const projects: Project[] = [
       'GPU acceleration is essential for training on large-scale datasets',
       'Proper regularization (dropout, gradient clipping) prevents overfitting while maintaining generalization',
       'Temperature control provides intuitive control over generation creativity vs. determinism',
+    ],
+    featured: true,
+  },
+  {
+    id: 'event-management',
+    title: 'Event Management Platform',
+    description: 'Full-stack event management system with Spring Boot backend, Next.js frontend, and PostgreSQL database',
+    longDescription:
+      'Developed a comprehensive event management platform enabling users to create, manage, and attend events. Built with Spring Boot for robust backend APIs, Next.js for responsive frontend, and PostgreSQL for reliable data persistence. Features include event creation and management, user authentication, event discovery, ticket booking, and real-time notifications. The platform demonstrates full-stack development expertise with proper separation of concerns, RESTful API design, and modern frontend practices.',
+    category: 'fullstack',
+    technologies: ['Spring Boot', 'Next.js', 'React', 'TypeScript', 'PostgreSQL', 'REST APIs', 'JWT Authentication'],
+    image: '/images/event-management.png',
+    githubUrls: [
+      { label: 'Backend', url: 'https://github.com/amanullahmd/backend-event-management' },
+      { label: 'Frontend', url: 'https://github.com/amanullahmd/event-management' },
+    ],
+    results: [
+      'Complete event lifecycle management (create, update, delete, publish)',
+      'User authentication and authorization with JWT tokens',
+      'Event discovery and search functionality',
+      'Ticket booking and reservation system',
+      'Real-time event notifications',
+      'Responsive design for mobile and desktop',
+      'RESTful API with comprehensive error handling',
+      'Database optimization for scalability',
+    ],
+    problemStatement:
+      'Event organizers need a centralized platform to manage events, handle registrations, and communicate with attendees. Existing solutions are often complex or lack integration between backend and frontend.',
+    solution:
+      'Built full-stack platform with Spring Boot providing robust backend APIs, Next.js delivering responsive user interface, and PostgreSQL ensuring reliable data management. Implemented JWT authentication, RESTful endpoints, and real-time features for seamless event management.',
+    lessonsLearned: [
+      'Spring Boot provides excellent framework for building scalable REST APIs',
+      'Next.js enables rapid development of responsive, modern web applications',
+      'Proper API design and documentation are crucial for frontend-backend integration',
+      'Database schema design impacts application performance and scalability',
+      'JWT authentication provides secure, stateless authentication mechanism',
     ],
     featured: true,
   },

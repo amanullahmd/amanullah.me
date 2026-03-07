@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 import ProjectCard from '@/components/ProjectCard'
 import { Project } from '@/lib/projects'
 
@@ -11,6 +12,10 @@ interface ProjectDetailClientProps {
 }
 
 export default function ProjectDetailClient({ project, relatedProjects }: ProjectDetailClientProps) {
+  const [showGithubMenu, setShowGithubMenu] = useState(false)
+
+  const hasMultipleGithubUrls = project.githubUrls && project.githubUrls.length > 1
+
   return (
     <div className="min-h-screen bg-white dark:bg-slate-900">
       {/* Hero Section */}
@@ -117,7 +122,7 @@ export default function ProjectDetailClient({ project, relatedProjects }: Projec
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="flex gap-4 mb-16"
+            className="flex gap-4 mb-16 flex-wrap"
           >
             {project.liveUrl && (
               <a
@@ -129,7 +134,32 @@ export default function ProjectDetailClient({ project, relatedProjects }: Projec
                 View Live
               </a>
             )}
-            {project.githubUrl && (
+            {hasMultipleGithubUrls ? (
+              <div className="relative">
+                <button
+                  onClick={() => setShowGithubMenu(!showGithubMenu)}
+                  className="px-6 py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-white transition-all duration-200"
+                >
+                  View on GitHub ▼
+                </button>
+                {showGithubMenu && (
+                  <div className="absolute top-full left-0 mt-2 bg-white dark:bg-slate-800 border-2 border-primary rounded-lg shadow-lg z-10 min-w-max">
+                    {project.githubUrls?.map((github) => (
+                      <a
+                        key={github.label}
+                        href={github.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block px-6 py-3 text-primary hover:bg-primary hover:text-white first:rounded-t-md last:rounded-b-md transition-all duration-200"
+                        onClick={() => setShowGithubMenu(false)}
+                      >
+                        {github.label}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : project.githubUrl ? (
               <a
                 href={project.githubUrl}
                 target="_blank"
@@ -138,7 +168,16 @@ export default function ProjectDetailClient({ project, relatedProjects }: Projec
               >
                 View on GitHub
               </a>
-            )}
+            ) : project.githubUrls && project.githubUrls.length === 1 ? (
+              <a
+                href={project.githubUrls[0].url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-white transition-all duration-200"
+              >
+                View on GitHub
+              </a>
+            ) : null}
           </motion.div>
         </div>
       </section>

@@ -5,22 +5,18 @@ export interface Skill {
 }
 
 export const skills: Skill[] = [
-  // Deep Learning & AI
-  { name: 'PyTorch', category: 'technical', proficiency: 'expert' },
-  { name: 'TensorFlow', category: 'technical', proficiency: 'advanced' },
-  { name: 'CNN (ResNet18)', category: 'technical', proficiency: 'expert' },
-  { name: 'RNN/LSTM', category: 'technical', proficiency: 'advanced' },
-  { name: 'scikit-learn', category: 'technical', proficiency: 'advanced' },
-  { name: 'Hugging Face', category: 'technical', proficiency: 'advanced' },
-  { name: 'OpenCV', category: 'technical', proficiency: 'advanced' },
-
-  // Backend Development
-  { name: 'Python', category: 'technical', proficiency: 'expert' },
-  { name: 'FastAPI', category: 'technical', proficiency: 'advanced' },
+  // Java & Backend Development (Primary Stack)
+  { name: 'Java', category: 'technical', proficiency: 'advanced' },
   { name: 'Spring Boot', category: 'technical', proficiency: 'advanced' },
-  { name: 'Node.js', category: 'technical', proficiency: 'advanced' },
+  { name: 'Spring Data JPA', category: 'technical', proficiency: 'advanced' },
+  { name: 'Spring Security', category: 'technical', proficiency: 'advanced' },
+  { name: 'Spring MVC', category: 'technical', proficiency: 'advanced' },
+  { name: 'Hibernate ORM', category: 'technical', proficiency: 'advanced' },
   { name: 'REST APIs', category: 'technical', proficiency: 'expert' },
   { name: 'Microservices', category: 'technical', proficiency: 'advanced' },
+  { name: 'Maven', category: 'technical', proficiency: 'advanced' },
+  { name: 'Gradle', category: 'technical', proficiency: 'intermediate' },
+  { name: 'JUnit & Mockito', category: 'technical', proficiency: 'advanced' },
 
   // Frontend Development
   { name: 'React', category: 'technical', proficiency: 'expert' },
@@ -29,6 +25,16 @@ export const skills: Skill[] = [
   { name: 'JavaScript', category: 'technical', proficiency: 'expert' },
   { name: 'Tailwind CSS', category: 'technical', proficiency: 'expert' },
   { name: 'HTML/CSS', category: 'technical', proficiency: 'expert' },
+
+  // Deep Learning & AI
+  { name: 'PyTorch', category: 'technical', proficiency: 'expert' },
+  { name: 'TensorFlow', category: 'technical', proficiency: 'advanced' },
+  { name: 'CNN (ResNet18)', category: 'technical', proficiency: 'expert' },
+  { name: 'RNN/LSTM', category: 'technical', proficiency: 'advanced' },
+  { name: 'scikit-learn', category: 'technical', proficiency: 'advanced' },
+  { name: 'Hugging Face', category: 'technical', proficiency: 'advanced' },
+  { name: 'OpenCV', category: 'technical', proficiency: 'advanced' },
+  { name: 'Python', category: 'technical', proficiency: 'expert' },
 
   // Data & Databases
   { name: 'SQL', category: 'technical', proficiency: 'expert' },
@@ -44,16 +50,17 @@ export const skills: Skill[] = [
   { name: 'Kubernetes', category: 'technical', proficiency: 'intermediate' },
   { name: 'CI/CD Pipelines', category: 'technical', proficiency: 'advanced' },
   { name: 'Linux/Bash', category: 'technical', proficiency: 'advanced' },
+  { name: 'Git/GitHub', category: 'technical', proficiency: 'expert' },
 
   // Tools & Platforms
-  { name: 'Git/GitHub', category: 'technical', proficiency: 'expert' },
   { name: 'Jupyter Notebooks', category: 'technical', proficiency: 'expert' },
   { name: 'TensorBoard', category: 'technical', proficiency: 'advanced' },
   { name: 'Apache Superset', category: 'technical', proficiency: 'advanced' },
-  { name: 'Java', category: 'technical', proficiency: 'advanced' },
+  { name: 'FastAPI', category: 'technical', proficiency: 'advanced' },
+  { name: 'Node.js', category: 'technical', proficiency: 'advanced' },
   { name: 'C', category: 'technical', proficiency: 'intermediate' },
 
-  // Product & Leadership
+  // Product & Entrepreneurship
   { name: 'Product Strategy', category: 'product', proficiency: 'advanced' },
   { name: 'Agile Methodologies', category: 'product', proficiency: 'expert' },
   { name: 'Project Management', category: 'product', proficiency: 'advanced' },
