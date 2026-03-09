@@ -35,6 +35,9 @@ export const skills: Skill[] = [
   { name: 'Hugging Face', category: 'technical', proficiency: 'advanced' },
   { name: 'OpenCV', category: 'technical', proficiency: 'advanced' },
   { name: 'Python', category: 'technical', proficiency: 'expert' },
+  { name: 'OpenAI', category: 'technical', proficiency: 'advanced' },
+  { name: 'ChromaDB', category: 'technical', proficiency: 'advanced' },
+  { name: 'BM25', category: 'technical', proficiency: 'advanced' },
 
   // Data & Databases
   { name: 'SQL', category: 'technical', proficiency: 'expert' },
@@ -58,6 +61,9 @@ export const skills: Skill[] = [
   { name: 'Apache Superset', category: 'technical', proficiency: 'advanced' },
   { name: 'FastAPI', category: 'technical', proficiency: 'advanced' },
   { name: 'Node.js', category: 'technical', proficiency: 'advanced' },
+  { name: 'Streamlit', category: 'technical', proficiency: 'advanced' },
+  { name: 'Pydantic v2', category: 'technical', proficiency: 'advanced' },
+  { name: 'Pytest', category: 'technical', proficiency: 'advanced' },
   { name: 'C', category: 'technical', proficiency: 'intermediate' },
 
   // Product & Entrepreneurship

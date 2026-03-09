@@ -211,6 +211,43 @@ export const projects: Project[] = [
     ],
     featured: false,
   },
+  {
+    id: 'rag-knowledge-assistant',
+    title: 'RAG Knowledge Assistant - AI Document Q&A Platform',
+    description: 'AI-powered chatbot with source citations that answers questions about company documents using hybrid search and streaming responses',
+    longDescription:
+      'Built a production-ready RAG (Retrieval Augmented Generation) system that processes internal company documents (PDFs, DOCX, TXT, MD) and answers questions with source citations. Combines vector search (ChromaDB), BM25 keyword search, and Reciprocal Rank Fusion for superior retrieval accuracy. Features real-time streaming responses, intelligent document chunking with page metadata preservation, and a modern dark-themed UI. Backend built with FastAPI, frontend with Streamlit, achieving 70% reduction in employee document search time.',
+    category: 'ai-ml',
+    technologies: ['Python', 'FastAPI', 'Streamlit', 'ChromaDB', 'OpenAI', 'BM25', 'Pydantic v2', 'Pytest'],
+    image: '/images/rag-knowledge-assistant.png',
+    githubUrl: 'https://github.com/amanullahmd/RAG-Knowledge-Assistant',
+    results: [
+      '70% reduction in employee document search time (15-30 min → <1 min)',
+      'Hybrid retrieval combining vector similarity + BM25 keyword search with RRF',
+      'Real-time streaming responses with typing cursor animation',
+      'Source citations with document filenames and page numbers',
+      'Multi-format document support (PDF, DOCX, TXT, Markdown)',
+      'Intelligent chunking with 512-token windows and 50-word overlap',
+      '80 passing unit tests covering backend functionality',
+      'Conversational AI with greeting detection for fast casual responses',
+      'Production architecture with shared service singletons and structured logging',
+      'Modern dark UI with gradient accents and smooth animations',
+    ],
+    problemStatement:
+      'Employees spend excessive time searching through internal documents (15-30 minutes per query) to find information. Traditional search lacks context understanding, and RAG systems often provide ungrounded hallucinations without source verification.',
+    solution:
+      'Implemented hybrid RAG system combining FastAPI backend with Streamlit frontend. Uses ChromaDB for vector embeddings (text-embedding-3-small) + BM25 for keyword matching, merged via Reciprocal Rank Fusion. GPT-4o-mini generates answers from retrieved chunks with mandatory source citations. Real-time SSE streaming and intelligent document parsing preserve page metadata for accurate citations.',
+    lessonsLearned: [
+      'Hybrid search (vector + keyword + RRF) outperforms pure vector search for document retrieval',
+      'Streaming responses dramatically improve UX perception of AI responsiveness',
+      'Source citations are critical for enterprise RAG adoption and user trust',
+      'Proper document chunking with metadata preservation enables accurate citations',
+      'Conversation context and greeting detection improve user experience in RAG systems',
+      'Comprehensive testing (80 tests) ensures reliability of RAG pipeline',
+      'Pydantic v2 settings and structured logging improve code maintainability',
+    ],
+    featured: true,
+  },
 ]
 
 export function getProjectById(id: string): Project | undefined {
